@@ -1,0 +1,17 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "News+", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+	  
+	  <% if logged_in? %>
+	  <li><%= link_to "Home", root_path %></li>
+	    <li><%= link_to "News", microposts_path %></li>
+		<%= link_to gravatar_for(current_user,size:50), logout_path, method: :delete%>
+	  <% else %>
+	  	<li><%= link_to login_path do %><img src="https://www.gravatar.com/avatar/?s=30"><% end %></li>
+	  <% end %>
+	</ul>
+    </nav>
+  </div>
+</header>

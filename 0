@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20200531045831_change_views_default.rb

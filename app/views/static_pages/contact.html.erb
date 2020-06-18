@@ -1,0 +1,122 @@
+<% provide(:title, @user) %>
+<h1>News</h1>
+<div class="row">
+  <div class="leftcolumn">
+  <div class="left-container">
+      <button class="button-link"><%= link_to "Recent Posts", contact_path %></button>
+      <button class="button-link"><%= link_to "Selected Post", contact_path %></button>
+      <button class="button-link"><%= link_to "My Setting", contact_path %></button>
+      <% if logged_in? %>
+      <% else %>
+          <button class="button-link"><%= link_to "New Post", login_path%></button>
+      <%end%>
+      <div class="search">
+          <input type="text" class="searchTerm" placeholder="What are you looking for?">
+          <button type="submit" class="searchButton">
+            Submit</i>
+        </button>
+      </div>      
+    
+    </div>
+    <div class="col-md-8">
+      <% if logged_in? %>
+        <div class="row">
+          <aside class="col-md-10">
+            <section class="micropost_form">
+              <%=render'shared/micropost_form'%>
+            </section>
+          </aside>
+        </div>
+      <%end%>
+
+      <ol class="microposts">
+        <%= render@microposts %>
+      </ol>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h3>Recent Members</h3>
+      <div class="grid-container">
+        <div class="grid-item">
+        <%= link_to gravatar_for(@r[0], size:50), @r[0]%>
+        <span><%= link_to @r[0].name, @r[0] %></span>
+        </div>
+        <div class="grid-item">
+        <%= link_to gravatar_for(@r[1], size:50), @r[1]%>
+        <span><%= link_to @r[1].name, @r[1] %></span>
+        </div>
+        <div class="grid-item">
+        <%= link_to gravatar_for(@r[2], size:50), @r[2]%>
+        <span><%= link_to @r[2].name, @r[2] %></span>
+        </div>
+        <div class="grid-item">
+        <%= link_to gravatar_for(@r[3], size:50), @r[3]%>
+        <span><%= link_to @r[3].name, @r[3] %></span>
+        </div>
+        <div class="grid-item">
+        <%= link_to gravatar_for(@r[4], size:50), @r[4]%>
+        <span><%= link_to @r[4].name, @r[4] %></span>
+        </div>
+        <div class="grid-item">
+        <%= link_to gravatar_for(@r[5], size:50), @r[5]%>
+        <span><%= link_to @r[5].name, @r[5] %></span>
+        </div>
+        <div class="grid-item">
+        <%= link_to gravatar_for(@r[6], size:50), @r[6]%>
+        <span><%= link_to @r[6].name, @r[6] %></span>
+        </div>
+        <div class="grid-item">
+        <%= link_to gravatar_for(@r[7], size:50), @r[7]%>
+        <span><%= link_to @r[7].name, @r[7] %></span>
+        </div>
+        <div class="grid-item">
+        <%= link_to gravatar_for(@r[8], size:50), @r[8]%>
+        <span><%= link_to @r[8].name, @r[8] %></span>
+        </div>
+        <div class="grid-item">
+        <%= link_to gravatar_for(@r[9], size:50), @r[9]%>
+        <span><%= link_to @r[9].name, @r[9] %></span>
+        </div>
+        <div class="grid-item">
+        <%= link_to gravatar_for(@r[10], size:50), @r[10]%>
+        <span><%= link_to @r[10].name, @r[10] %></span>
+        </div>
+        <div class="grid-item">
+        <%= link_to gravatar_for(@r[11], size:50), @r[11]%>
+        <span><%= link_to @r[11].name, @r[11] %></span>
+        </div>
+    </div>
+    
+    <div class="card">
+      <h3>Topics</h3>
+      <button class="button" type="submit">V.R.</button>
+      <button class="button" type="submit">A.I.</button>
+      <button class="button" type="submit">RMIT</button>
+      <button class="button" type="submit">Games</button>
+      <button class="button" type="submit">Ruby</button>
+      <button class="button" type="submit">Rails</button>
+      <button class="button" type="submit">RAD</button>
+      <button class="button" type="submit">iOS</button>
+
+	  </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <p><span class="user"><%= link_to @popular[0].title, @popular[0] %>  </span> | Views: <%= @popular[0].views%></span></p>
+      <p><span class="user"><%= link_to @popular[1].title, @popular[1] %>  </span> | Views: <%= @popular[1].views%></span></p>
+      <p><span class="user"><%= link_to @popular[2].title, @popular[2] %>  </span> | Views: <%= @popular[2].views%></span></p>
+      <p><span class="user"><%= link_to @popular[3].title, @popular[3] %>  </span> | Views: <%= @popular[3].views%></span></p>
+      <p><span class="user"><%= link_to @popular[4].title, @popular[4] %>  </span> | Views: <%= @popular[4].views%></span></p>
+
+      
+    </div>
+    
+    <div class="card">
+    	<h3>Links</h3>
+        <a href="https://www.w3schools.com/html/"><button class="button-link" type="submit">Visit our HTML tutorial</button></a>
+        <button class="button-link" type="submit"><a href="https://www.rmit.edu.au/">RMIT Website</a></button>
+        <button class="button-link" type="submit"><a href="https://github.com/rmit-s3602584-peter-moorhead/RAD-tute-8">Github</a></button>
+        <button class="button-link" type="submit"><a href="https://rubyonrails.org/">Ruby On Rails</a></button>
+      </div>
+    </div>
+</div>

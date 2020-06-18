@@ -1,0 +1,31 @@
+<%= provide(:title, @user.name) %>
+<div class="profile-main">
+	<div class="profile-header">
+		<div class="user-detail">
+			<div class="user-image">
+				<%= gravatar_for @user %>
+			</div>
+			<div class="user-data">
+				<h3><%= @user.name %></h3><br>
+				<%= @user.location%><br>
+				<%= @user.created_at%>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="leftcolumn">
+<h3>Recents Posts:</h3>
+	<% if @microposts.any? %>
+		<ol class="microposts">
+			<%= render@microposts %>
+		</ol>
+		<%= will_paginate@microposts %>
+	<%end%>
+	
+</div>
+
+<div class="rightcolumn">
+	<h3>Recent Comments: </h3>
+	<%= render@comments%>	
+</div>

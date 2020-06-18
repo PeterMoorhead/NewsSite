@@ -1,0 +1,7 @@
+<li id="comment-<%= comment.id %>">
+    <%= gravatar_for(comment.user,size:50)%>
+    <span class="user"><%= link_to comment.user.name, comment.user %></span>
+    <span class="user"><%= link_to comment.micropost.title, comment.micropost %></span>
+    <span class="content"><%= comment.content %></span>
+    <span class="timestamp"><%= comment.created_at %></span>
+</li>

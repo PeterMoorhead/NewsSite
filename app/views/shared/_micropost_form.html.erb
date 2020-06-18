@@ -1,0 +1,15 @@
+<%= form_for(@micropostCreate) do |f| %>
+    <%=render 'shared/error_messages', object: f.object %>
+    <div class="text-line">
+        <%= f.text_area :title, :required => true, placeholder:"Title"%>
+    </div>
+    <div class="field">
+        <%= f.text_area :category, :required => true, placeholder:"Category"%>
+        
+    </div>
+    <div class="field">
+        <%= f.text_area :content, :required => true, placeholder:"Article"%>
+        
+    </div>
+    <%= f.submit"New Post", class:"btn btn-primary"%>
+<%end%>

@@ -1,0 +1,10 @@
+<li id="micropost-<%= micropost.id %>">
+    <%= gravatar_for(micropost.user,size:50)%>
+    <span class="user"><%= link_to micropost.user.name, micropost.user %> | | </span>
+    <span class="user"><%= link_to micropost.title, micropost %></span>
+    <span class="content"><%= micropost.content %></span>
+    <span class="content">Category: <%= micropost.category %></span>
+    <span class="content">Views: <%= micropost.views %></span>
+    <span class="timestamp"><%= micropost.created_at %></span>
+    <span class="timestamp">Comments: <%= micropost.comments.count %></span>
+</li>
